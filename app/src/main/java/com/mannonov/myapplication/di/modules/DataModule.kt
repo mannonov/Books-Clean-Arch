@@ -1,4 +1,4 @@
-package com.mannonov.myapplication.modules
+package com.mannonov.myapplication.di.modules
 
 import com.mannonov.data.network.ApiService
 import com.mannonov.data.repository.BooksRepositoryImpl

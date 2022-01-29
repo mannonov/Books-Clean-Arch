@@ -1,4 +1,4 @@
-package com.mannonov.myapplication.modules
+package com.mannonov.myapplication.di.modules
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

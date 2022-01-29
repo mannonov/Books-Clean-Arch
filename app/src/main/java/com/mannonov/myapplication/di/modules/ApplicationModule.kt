@@ -1,5 +1,6 @@
-package com.mannonov.myapplication.modules
+package com.mannonov.myapplication.di.modules
 
+import com.mannonov.data.network.FlowCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -19,6 +20,7 @@ class ApplicationModule {
         return Retrofit
             .Builder()
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(FlowCallAdapterFactory)
             .baseUrl(baseUrl)
             .build()
     }

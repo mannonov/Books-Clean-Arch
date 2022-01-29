@@ -1,8 +1,8 @@
 package com.mannonov.domains.models
 
-data class BookResponse(
+data class BaseResponse<T>(
     val code: Int,
-    val `data`: List<Data>,
+    val data: List<T>,
     val status: String,
     val total: Int
 )

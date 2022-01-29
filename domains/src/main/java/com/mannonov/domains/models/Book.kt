@@ -1,6 +1,6 @@
 package com.mannonov.domains.models
 
-data class Data(
+data class Book(
     val author: String,
     val description: String,
     val genre: String,
