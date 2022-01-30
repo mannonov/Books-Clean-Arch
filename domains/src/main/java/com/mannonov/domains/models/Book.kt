@@ -1,5 +1,7 @@
 package com.mannonov.domains.models
 
+import java.io.Serializable
+
 data class Book(
     val author: String,
     val description: String,
@@ -9,5 +11,5 @@ data class Book(
     val isbn: String,
     val published: String,
     val publisher: String,
-    val title: String
-)
+    val title: String,
+) : Serializable

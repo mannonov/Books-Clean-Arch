@@ -8,7 +8,6 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("books?_?")
-    fun getBooks(@Query("quantity")count: Int): Flow<BaseResponse<Book>>
-
+    @GET("books")
+    fun getBooks(@Query("_quantity") count: Int): Flow<BaseResponse<Book>>
 }

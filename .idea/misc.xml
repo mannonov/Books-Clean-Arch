@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/StudioProjects/app/src/main/res/drawable/rounded_layout.xml" value="0.2475" />
         <entry key="..\:/StudioProjects/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/StudioProjects/app/src/main/res/layout/fragment_book_details.xml" value="0.27447916666666666" />
         <entry key="..\:/StudioProjects/app/src/main/res/layout/fragment_books.xml" value="0.27447916666666666" />
         <entry key="..\:/StudioProjects/app/src/main/res/layout/fragment_history.xml" value="0.27447916666666666" />
         <entry key="..\:/StudioProjects/app/src/main/res/layout/fragment_home.xml" value="0.2604166666666667" />
+        <entry key="..\:/StudioProjects/app/src/main/res/layout/item_book.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

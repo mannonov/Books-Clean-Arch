@@ -6,7 +6,10 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.mannonov.myapplication.App
 import com.mannonov.myapplication.R
 import com.mannonov.myapplication.databinding.ActivityMainBinding
@@ -17,10 +20,7 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var factory: ViewModelProvider.Factory
 
-    private val viewModel: BookViewModel by viewModels { factory }
 
     private val TAG = "BookResponse"
 
@@ -31,17 +31,23 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        App.appComponent.inject(this)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment
 
-        lifecycleScope.launch {
-            viewModel.getBooks(2).collect {
-                when (it) {
-                    is BookResource.Loading -> Log.d(TAG, "Loading: $it")
-                    is BookResource.Error -> Log.d(TAG, "Error: $it")
-                    is BookResource.Success -> Log.d(TAG, "Success: ${it.list}")
-                }
-            }
-        }
+        val navController = navHostFragment.navController
+
+        val appBarConfiguration = AppBarConfiguration(
+            topLevelDestinationIds = setOf(
+                R.id.homeFragment,
+                R.id.booksFragment,
+                R.id.historyFragment,
+                R.id.bookDetailsFragment
+            )
+        )
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+
 
     }
 }
