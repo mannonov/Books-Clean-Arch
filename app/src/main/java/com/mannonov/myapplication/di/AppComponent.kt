@@ -4,9 +4,7 @@ import com.mannonov.myapplication.App
 import com.mannonov.myapplication.di.modules.ApplicationModule
 import com.mannonov.myapplication.di.modules.DataModule
 import com.mannonov.myapplication.di.modules.ViewModelModule
-import com.mannonov.myapplication.presentation.BooksFragment
-import com.mannonov.myapplication.presentation.HomeFragment
-import com.mannonov.myapplication.presentation.MainActivity
+import com.mannonov.myapplication.presentation.*
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -23,5 +21,7 @@ interface AppComponent {
 
     fun inject(app: App)
     fun inject(booksFragment: BooksFragment)
+    fun inject(detailsFragment: BookDetailsFragment)
+    fun inject(historyFragment: HistoryFragment)
 
 }

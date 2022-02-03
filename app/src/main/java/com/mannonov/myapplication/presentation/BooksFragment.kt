@@ -42,16 +42,6 @@ class BooksFragment : Fragment() {
 
         App.appComponent.inject(this)
 
-        lifecycleScope.launch {
-            viewModel.getBooks(args.count).collect {
-                when (it) {
-                    is BookResource.Loading -> Log.d(TAG, "Loading: $it")
-                    is BookResource.Error -> Log.d(TAG, "Error: $it")
-                    is BookResource.Success -> setUpAdapter(it.list)
-                }
-            }
-        }
-
     }
 
     override fun onCreateView(
@@ -65,7 +55,15 @@ class BooksFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        lifecycleScope.launch {
+            viewModel.getBooks(args.count).collect {
+                when (it) {
+                    is BookResource.Loading -> Log.d(TAG, "Loading: $it")
+                    is BookResource.Error -> Log.d(TAG, "Error: $it")
+                    is BookResource.Success -> setUpAdapter(it.list)
+                }
+            }
+        }
 
     }
 

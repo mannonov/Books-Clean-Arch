@@ -8,4 +8,8 @@ interface BookRepository {
 
     fun getBooks(count: Int): Flow<BaseResponse<Book>>
 
+    fun getBooksFromDatabase():List<Book>
+
+    suspend fun addBookToDatabase(book: Book)
+
 }

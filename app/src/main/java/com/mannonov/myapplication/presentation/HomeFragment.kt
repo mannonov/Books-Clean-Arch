@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnHistory.setOnClickListener {
-
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHistoryFragment())
         }
 
     }

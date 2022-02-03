@@ -21,5 +21,9 @@ class BookInteractor @Inject constructor(private val bookRepository: BookReposit
         }.flowOn(Dispatchers.IO)
     }
 
+    fun getBooksFromDatabase(): List<Book> = bookRepository.getBooksFromDatabase()
+
+    suspend fun insertBookToDatabase(book: Book) = bookRepository.addBookToDatabase(book)
+
 
 }
