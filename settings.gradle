@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Books Clean Arch"
 include ':app'
+include ':domains'
+include ':data'
